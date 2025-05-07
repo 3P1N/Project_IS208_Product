@@ -1,9 +1,8 @@
 
-package appgiaovan;
+package appQLKho.MAIN;
 
 
-import appgiaovan.GUI.LoginGUI;
-//import javax.mail.MessagingException;
+import appQLKho.GUI.LoginGUI;
 
 
 public class QuanLyKho {
@@ -11,7 +10,7 @@ public class QuanLyKho {
     public static void main(String[] args) {
          LoginGUI login = new LoginGUI();
          login.setVisible(true);
-          
+
         
     }
 }

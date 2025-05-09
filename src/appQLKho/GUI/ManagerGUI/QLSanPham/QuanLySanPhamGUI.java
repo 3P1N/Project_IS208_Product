@@ -55,12 +55,13 @@ public class QuanLySanPhamGUI extends JFrame {
         add(leftPanel, BorderLayout.WEST);
 
         // Bảng dữ liệu sản phẩm
-        String[] columnNames = {"Mã SP", "Tên SP", "Số lượng"};
-        Object[][] data = new Object[10][3];
+        String[] columnNames = {"Mã SP", "Tên SP","Đơn vị tính", "Giá"};
+        Object[][] data = new Object[10][4];
         for (int i = 0; i < data.length; i++) {
             data[i][0] = "LH000" + i;
             data[i][1] = "Lẵng hoa";
-            data[i][2] = 10;
+            data[i][2] = "Bó";
+            data[i][3] = 500;
         }
 
         JTable table = new JTable(new DefaultTableModel(data, columnNames) {

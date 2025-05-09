@@ -1,13 +1,14 @@
-package appQLKho.GUI.ManagerGUI.QLBaoCao;
+package appQLKho.GUI.ManagerGUI;
 
+import appQLKho.GUI.ManagerGUI.QLBaoCao.*;
 import appQLKho.GUI.ManagerGUI.QLSanPham.*;
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;
 import java.awt.*;
 
-public class QuanLyBaoCaoGUI extends JFrame {
+public class KiemTraTonKho extends JFrame {
 
-    public QuanLyBaoCaoGUI() {
+    public KiemTraTonKho() {
         setTitle("KiotViet Sync");
         setSize(1200, 700);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
@@ -38,9 +39,9 @@ public class QuanLyBaoCaoGUI extends JFrame {
         // Panel tìm kiếm và lựa chọn
         JPanel filterPanel = new JPanel();
         filterPanel.setLayout(new FlowLayout(FlowLayout.LEFT));
-        filterPanel.setBorder(BorderFactory.createTitledBorder("Danh sách báo cáo"));
+        filterPanel.setBorder(BorderFactory.createTitledBorder("Danh sách sản phẩm"));
         filterPanel.setMaximumSize(new Dimension(220, 100));
-        filterPanel.add(new JLabel("Tìm kiếm báo cáo:"));
+        filterPanel.add(new JLabel("Tìm kiếm sản phẩm:"));
         filterPanel.add(new JTextField(15));
         filterPanel.add(new JButton("Lọc"));
 
@@ -56,12 +57,12 @@ public class QuanLyBaoCaoGUI extends JFrame {
         add(leftPanel, BorderLayout.WEST);
 
         // Bảng dữ liệu sản phẩm
-        String[] columnNames = {"Mã báo cáo", "Loại báo cáo", "Trạng thái"};
+        String[] columnNames = {"Mã sản phẩm", "Loại sản phẩm", "Số lượng"};
         Object[][] data = new Object[10][3];
         for (int i = 0; i < data.length; i++) {
-            data[i][0] = "BC000" + i;
-            data[i][1] = "Theo tháng";
-            data[i][2] = "Chưa gửi";
+            data[i][0] = "SP000" + i;
+            data[i][1] = "Hoa";
+            data[i][2] = 10;
         }
 
         JTable table = new JTable(new DefaultTableModel(data, columnNames) {
@@ -85,14 +86,10 @@ public class QuanLyBaoCaoGUI extends JFrame {
         JPanel bottomPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
         bottomPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
 
-        JButton btnAdd = new JButton("Tạo báo cáo");
-        JButton btnView = new JButton("Xem báo cáo");
-        JButton btnSend = new JButton("Gửi báo cáo");
+        
         JButton btnBack = new JButton("Quay lại");
 
-        bottomPanel.add(btnAdd);
-        bottomPanel.add(btnView);
-        bottomPanel.add(btnSend);
+       
         bottomPanel.add(btnBack);
 
         add(bottomPanel, BorderLayout.SOUTH);
@@ -111,6 +108,6 @@ public class QuanLyBaoCaoGUI extends JFrame {
     }
 
     public static void main(String[] args) {
-        SwingUtilities.invokeLater(() -> new QuanLyBaoCaoGUI().setVisible(true));
+        SwingUtilities.invokeLater(() -> new KiemTraTonKho().setVisible(true));
     }
 }

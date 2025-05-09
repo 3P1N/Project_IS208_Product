@@ -13,7 +13,7 @@ import java.util.ArrayList;
 
 public class AdminMainScreen extends JFrame {
     public AdminMainScreen() {
-        setTitle("PMIT - Quản lý kho hàng");
+        setTitle("ABC WAREHOUSE");
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setSize(1200, 700);
         setLocationRelativeTo(null);
@@ -171,19 +171,29 @@ public class AdminMainScreen extends JFrame {
         search.setLayout(new BoxLayout(search, BoxLayout.Y_AXIS));
         search.add(new JLabel("Tìm kiếm phân quyền"));
         search.add(Box.createVerticalStrut(5));
-        search.add(new JLabel("Theo ID"));
-        JTextField quyenId = new JTextField(); quyenId.setMaximumSize(new Dimension(Integer.MAX_VALUE, 20));
-        search.add(Box.createVerticalStrut(2)); search.add(quyenId);
+        search.add(new JLabel("Theo ID quyền"));
+        JTextField quyenId = new JTextField(); 
+        quyenId.setMaximumSize(new Dimension(Integer.MAX_VALUE, 20));
+        search.add(Box.createVerticalStrut(5)); 
+        search.add(quyenId);
         search.add(Box.createVerticalStrut(10));
-        search.add(new JLabel("Theo tên"));
-        JTextField quyenName = new JTextField(); quyenName.setMaximumSize(new Dimension(Integer.MAX_VALUE, 20));
-        search.add(Box.createVerticalStrut(2)); search.add(quyenName);
+        search.add(new JLabel("Theo tên quyền"));
+        JTextField quyenName = new JTextField(); 
+        quyenName.setMaximumSize(new Dimension(Integer.MAX_VALUE, 20));
+        search.add(Box.createVerticalStrut(5)); 
+        search.add(quyenName);
+        search.add(Box.createVerticalStrut(10));
+        search.add(new JLabel("Theo ID_username"));
+        JTextField IDusername = new JTextField(); 
+        IDusername.setMaximumSize(new Dimension(Integer.MAX_VALUE, 20));
+        search.add(Box.createVerticalStrut(5)); 
+        search.add(IDusername);
         left.add(search, BorderLayout.CENTER);
 
         JPanel right = new JPanel(new BorderLayout(10, 10));
-        // Thêm cột Vai trò vào sau Tên quyền
+        
         DefaultTableModel permModel = new DefaultTableModel(
-            new Object[]{"Quyền ID", "Tên quyền", "Vai trò", "Mô tả"}, 0
+            new Object[]{"ID Quyền", "Tên quyền","ID_user", "Vai trò", "Mô tả"}, 0
         );
         JTable permTable = new JTable(permModel) {
             @Override public boolean isCellEditable(int row, int col) { return false; }
@@ -192,14 +202,24 @@ public class AdminMainScreen extends JFrame {
 
         // Dữ liệu mẫu phân quyền có thêm Vai trò
         List<Object[]> permData = new ArrayList<>();
-        permData.add(new Object[]{"P001", "Quyền hệ thống", "Admin", "Toàn quyền hệ thống"});
-        permData.add(new Object[]{"P002", "Quản lý kho", "Quản lý", "Quản lý kho và báo cáo"});
-        permData.add(new Object[]{"P003", "Quản lý phiếu nhập", "Nhân viên nhập kho", "Tạo, sửa phiếu nhập kho"});
-        permData.add(new Object[]{"P004", "Quản lý phiếu xuất", "Nhân viên xuất kho", "Tạo, sửa phiếu xuất kho"});
+        permData.add(new Object[]{"P001", "Quyền hệ thống","ACC001", "Admin", "Toàn quyền hệ thống"});
+        permData.add(new Object[]{"P002", "Quản lý kho", "ACC004","Quản lý", "Quản lý kho và báo cáo"});
+        permData.add(new Object[]{"P003", "Quản lý phiếu nhập","ACC003", "Nhân viên nhập kho", "Tạo, sửa phiếu nhập kho"});
+        permData.add(new Object[]{"P004", "Quản lý phiếu xuất","ACC003", "Nhân viên xuất kho", "Tạo, sửa phiếu xuất kho"});
         for (Object[] row : permData) {
             permModel.addRow(row);
         }
-
+        // Logic lọc
+        Runnable doFilter = () -> {
+            String idQuyen = quyenId.getText().trim().toUpperCase();
+            String nameQuyen = quyenName.getText().trim().toUpperCase();
+            String userID = IDusername.getText().trim().toUpperCase();
+            filterAndRefreshPQ(permModel, permData, idQuyen, nameQuyen,userID);
+        };
+        quyenId.getDocument().addDocumentListener((SimpleDocumentListener) e -> doFilter.run());
+        quyenName.getDocument().addDocumentListener((SimpleDocumentListener) e -> doFilter.run());
+        IDusername.getDocument().addDocumentListener((SimpleDocumentListener) e -> doFilter.run());
+        
         // CRUD actions
         btnAddPerm.addActionListener(e -> { /* TODO: thêm */ });
         btnEditPerm.addActionListener(e -> { /* TODO: sửa */ });
@@ -225,6 +245,19 @@ public class AdminMainScreen extends JFrame {
                 (ql && role.equals("Quản lý")) ||
                 (nvNhap && role.equals("Nhân viên nhập kho")) ||
                 (nvXuat && role.equals("Nhân viên xuất kho")))) {
+                model.addRow(row);
+            }
+        }
+    }
+    //filterAndRefreshPQ(permModel, permData, idQuyen, nameQuyen,userID);
+    private void filterAndRefreshPQ(DefaultTableModel model, List<Object[]> data,
+                                  String idQuyen, String nameQuyen, String userID) {
+        model.setRowCount(0);
+        for (Object[] row : data) {
+            String id = ((String) row[0]).toUpperCase();
+            String name = ((String) row[1]).toUpperCase();
+            String taikhoan = ((String) row[2]).toUpperCase();
+            if (id.contains(idQuyen) && name.contains(nameQuyen) && taikhoan.contains(userID)) {
                 model.addRow(row);
             }
         }

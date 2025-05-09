@@ -58,14 +58,12 @@ public class QLNhapHang extends JFrame {
 
         JButton btnAdd = new JButton("Tạo phiếu nhập");
         JButton btnView = new JButton("Xem chi tiết");
-        JButton btnSend = new JButton("Gửi phiếu");
-        JButton btnBack = new JButton("Quay lại");
+        JButton btnSend = new JButton("Gửi phiếu");   
 
         bottomPanel.add(btnAdd);
         bottomPanel.add(btnView);
         bottomPanel.add(btnSend);
-        bottomPanel.add(btnBack);
-
+ 
         add(bottomPanel, BorderLayout.SOUTH);
     }
 

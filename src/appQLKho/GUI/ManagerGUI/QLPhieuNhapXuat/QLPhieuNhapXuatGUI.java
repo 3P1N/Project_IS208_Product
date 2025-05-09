@@ -8,7 +8,7 @@ import java.awt.*;
 public class QLPhieuNhapXuatGUI extends JFrame {
 
     public QLPhieuNhapXuatGUI() {
-        setTitle("KiotViet Sync");
+        setTitle("ABC WAREHOUSE");
         setSize(1200, 700);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
@@ -23,17 +23,17 @@ public class QLPhieuNhapXuatGUI extends JFrame {
 
         Font menuFont = new Font("Arial", Font.PLAIN, 16);
 
-        sidebar.add(createSidebarButton("Trang chủ", menuFont, "🏠"));
+        sidebar.add(createSidebarButton("Trang chủ", menuFont, ""));
         sidebar.add(Box.createVerticalStrut(10));
-        sidebar.add(createSidebarButton("Quản lý sản phẩm", menuFont, "📊"));
+        sidebar.add(createSidebarButton("Quản lý sản phẩm", menuFont, ""));
         sidebar.add(Box.createVerticalStrut(10));
-        sidebar.add(createSidebarButton("Quản lý phiếu nhập xuất", menuFont, "👤"));
+        sidebar.add(createSidebarButton("Quản lý phiếu nhập xuất", menuFont, ""));
         sidebar.add(Box.createVerticalStrut(10));
-        sidebar.add(createSidebarButton("Kiểm tra tồn kho", menuFont, "🔌"));
+        sidebar.add(createSidebarButton("Kiểm tra tồn kho", menuFont, ""));
         sidebar.add(Box.createVerticalStrut(10));
-        sidebar.add(createSidebarButton("Kiểm kê hàng hóa", menuFont, "📄"));
+        sidebar.add(createSidebarButton("Kiểm kê hàng hóa", menuFont, ""));
         sidebar.add(Box.createVerticalStrut(10));
-        sidebar.add(createSidebarButton("Quản lý báo cáo", menuFont, "📄"));
+        sidebar.add(createSidebarButton("Quản lý báo cáo", menuFont, ""));
         
         // Panel tìm kiếm và lựa chọn
         JPanel filterPanel = new JPanel();

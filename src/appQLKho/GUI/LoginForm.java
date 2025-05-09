@@ -39,13 +39,18 @@ public class LoginForm extends JFrame {
         loginPanel.setBorder(BorderFactory.createLineBorder(new Color(200, 200, 200)));
         mainPanel.add(loginPanel);
 
-        JLabel logo = new JLabel("KhoApp");
-        logo.setFont(new Font("Arial", Font.BOLD, 28));
+        int panelWidth = loginPanel.getWidth();
+        int labelWidth = 200; // hoặc logo.getPreferredSize().width sau khi set font
+        int x = (panelWidth - labelWidth) / 2;
+
+        JLabel logo = new JLabel("ABC WAREHOUSE");
+        logo.setFont(new Font("Arial", Font.BOLD, 20));
         logo.setForeground(new Color(0, 102, 204));
-        logo.setBounds(110, 10, 200, 40);
+        logo.setBounds(x, 10, labelWidth, 40);
         loginPanel.add(logo);
 
-        JLabel subtitle = new JLabel("Phần mềm quản lý kho");
+
+        JLabel subtitle = new JLabel("Phần mềm quản lý kho hàng");
         subtitle.setFont(new Font("Arial", Font.PLAIN, 12));
         subtitle.setBounds(90, 45, 200, 20);
         subtitle.setForeground(Color.GRAY);

@@ -9,7 +9,7 @@ import java.awt.*;
 public class QLNhapHang extends JFrame {
 
     public QLNhapHang() {
-        setTitle("KiotViet Sync");
+        setTitle("ABC WAREHOUSE");
         setSize(1200, 700);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLocationRelativeTo(null);

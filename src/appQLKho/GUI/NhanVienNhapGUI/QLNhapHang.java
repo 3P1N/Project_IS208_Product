@@ -14,22 +14,7 @@ public class QLNhapHang extends JFrame {
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         setLayout(new BorderLayout());
-
-        // Sidebar menu bên trái
-        JPanel sidebar = new JPanel();
-        sidebar.setLayout(new BoxLayout(sidebar, BoxLayout.Y_AXIS));
-        sidebar.setBackground(new Color(240, 240, 240));
-        sidebar.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
-        sidebar.setPreferredSize(new Dimension(220, 300));
-
-        Font menuFont = new Font("Arial", Font.PLAIN, 16);
-
-        sidebar.add(createSidebarButton("Trang chủ", menuFont, "🏠"));
-        sidebar.add(Box.createVerticalStrut(10));
-        sidebar.add(createSidebarButton("Quản lý phiếu nhập", menuFont, "👤"));
-        sidebar.add(Box.createVerticalStrut(10));
-        
-        
+                
         // Panel tìm kiếm và lựa chọn
         JPanel filterPanel = new JPanel();
         filterPanel.setLayout(new FlowLayout(FlowLayout.LEFT));
@@ -39,16 +24,6 @@ public class QLNhapHang extends JFrame {
         filterPanel.add(new JTextField(15));
         filterPanel.add(new JButton("Lọc"));
 
-        // Gộp sidebar và filterPanel vào 1 panel bên trái theo chiều dọc
-        JPanel leftPanel = new JPanel();
-        leftPanel.setLayout(new BoxLayout(leftPanel, BoxLayout.Y_AXIS));
-        leftPanel.setPreferredSize(new Dimension(240, getHeight()));
-        leftPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 5));
-        leftPanel.add(sidebar);
-        leftPanel.add(Box.createVerticalStrut(20));
-//        leftPanel.add(filterPanel);
-
-        add(leftPanel, BorderLayout.WEST);
 
         // Bảng dữ liệu sản phẩm
         String[] columnNames = {"Mã Phiếu", "Loại Phiếu", "Trạng thái gửi", "Trạng thái duyệt"};
@@ -94,17 +69,6 @@ public class QLNhapHang extends JFrame {
         add(bottomPanel, BorderLayout.SOUTH);
     }
 
-    private JButton createSidebarButton(String text, Font font, String iconText) {
-        JButton button = new JButton(iconText + "  " + text);
-        button.setFont(font);
-        button.setFocusPainted(false);
-        button.setHorizontalAlignment(SwingConstants.LEFT);
-//        button.setBackground(Color.WHITE);
-        button.setBackground(new Color(220, 220, 220)); 
-        button.setBorder(BorderFactory.createEmptyBorder(10, 15, 10, 15));
-        button.setMaximumSize(new Dimension(250, 40));
-        return button;
-    }
 
     public static void main(String[] args) {
         SwingUtilities.invokeLater(() -> new QLNhapHang().setVisible(true));

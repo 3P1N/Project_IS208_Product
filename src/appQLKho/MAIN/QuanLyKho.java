@@ -2,13 +2,13 @@
 package appQLKho.MAIN;
 
 
-import appQLKho.GUI.LoginGUI;
+import appQLKho.GUI.LoginForm;
 
 
 public class QuanLyKho {
 
     public static void main(String[] args) {
-         LoginGUI login = new LoginGUI();
+         LoginForm login = new LoginForm();
          login.setVisible(true);
 
         

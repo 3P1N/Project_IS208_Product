@@ -3,7 +3,18 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/github/Project_IS208_Product/src/appQLKho/GUI/FirstGUI.java</file>
+
+
+            <file>file:/D:/Github/Project_IS208_Product/src/appQLKho/GUI/ManagerGUI/QLNhanVien/QuanLyNhanVien.java</file>
+            <file>file:/D:/Github/Project_IS208_Product/src/appQLKho/GUI/ManagerGUI/QLBaoCao/QuanLyBaoCao.java</file>
+            <file>file:/D:/Github/Project_IS208_Product/src/appQLKho/AdminGUI/AdminMainScreen.java</file>
+            <file>file:/D:/Github/Project_IS208_Product/src/appQLKho/GUI/ManagerGUI/QLKho/QuanLyKho.java</file>
+            <file>file:/D:/Github/Project_IS208_Product/src/appQLKho/GUI/LoginGUI.java</file>
+            <file>file:/D:/Github/Project_IS208_Product/src/appQLKho/GUI/ManagerGUI/QLNhanVien/TraCuuNhanVien.java</file>
+            <file>file:/D:/Github/Project_IS208_Product/src/appQLKho/MAIN/QuanLyKho.java</file>
+            <file>file:/D:/Github/Project_IS208_Product/src/appQLKho/GUI/ManagerGUI/ManagerMainScreen.java</file>
+            <file>file:/D:/Github/Project_IS208_Product/src/appQLKho/GUI/ManagerGUI/QLNhanVien/ThemNhanVien.java</file>
+
         </group>
     </open-files>
 </project-private>

@@ -10,7 +10,7 @@ import java.awt.*;
 public class QLXuatHang extends JFrame {
 
     public QLXuatHang() {
-        setTitle("KiotViet Sync");
+        setTitle("ABC WAREHOUSE");
         setSize(1200, 700);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLocationRelativeTo(null);

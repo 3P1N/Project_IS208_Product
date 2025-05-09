@@ -9,7 +9,7 @@ import java.awt.*;
 public class KiemTraTonKho extends JFrame {
 
     public KiemTraTonKho() {
-        setTitle("KiotViet Sync");
+        setTitle("ABC WAREHOUSE");
         setSize(1200, 700);
         setDefaultCloseOperation(EXIT_ON_CLOSE);
         setLocationRelativeTo(null);

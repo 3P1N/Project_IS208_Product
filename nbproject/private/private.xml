@@ -3,8 +3,12 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/github/Project_IS208_Product/src/appQLKho/GUI/FirstGUI.java</file>
-            <file>file:/D:/github/Project_IS208_Product/src/appQLKho/GUI/ManagerGUI/QLPhieuNhapXuat/QLPhieuNhapXuatGUI.java</file>
+            <file>file:/D:/Github/Project_IS208_Product/src/appQLKho/BUS/AccountBUS.java</file>
+            <file>file:/D:/Github/Project_IS208_Product/src/appQLKho/AdminGUI/AdminMainScreen.java</file>
+            <file>file:/D:/Github/Project_IS208_Product/src/appQLKho/DTO/AccountRoleDTO.java</file>
+            <file>file:/D:/Github/Project_IS208_Product/src/appQLKho/GUI/ManagerGUI/QLSanPham/ThemSanPham.java</file>
+            <file>file:/D:/Github/Project_IS208_Product/src/appQLKho/BUS/UserBUS.java</file>
+            <file>file:/D:/Github/Project_IS208_Product/src/appQLKho/GUI/ManagerGUI/KiemKeHangHoa.java</file>
         </group>
     </open-files>
 </project-private>

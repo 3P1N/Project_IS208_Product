@@ -54,6 +54,9 @@ public class QLXuatHang extends JFrame {
 
         add(centerPanel, BorderLayout.CENTER);
 
+        
+        
+        
         // Panel các nút chức năng: Thêm, Sửa, Xóa, Quay lại
         JPanel bottomPanel = new JPanel(new FlowLayout(FlowLayout.RIGHT));
         bottomPanel.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));

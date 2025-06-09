@@ -1,19 +1,20 @@
-package appgiaovan.EmployeeGUI;
+package appquanlykho.Components;
 
-import appgiaovan.Entity.DonHang;
-import appgiaovan.Entity.GoiHang;
+
+import appquanlykho.Entity.NguoiDung;
+import appquanlykho.Entity.SanPham;
 import javax.swing.*;
 import javax.swing.table.*;
 import java.awt.*;
 import java.sql.SQLException;
 import java.util.List;
 
-public class TableDonHang extends JPanel {
+public class MyTable extends JPanel {
 
-    private final JTable table;
+    public final JTable table;
     private DefaultTableModel model;
 
-    public TableDonHang(String[] columnNames, Object[][] data) {
+    public MyTable(String[] columnNames, Object[][] data) {
         setLayout(new BorderLayout());
 
         model = new DefaultTableModel(data, columnNames) {
@@ -67,29 +68,7 @@ public class TableDonHang extends JPanel {
     }
 
    
-    public void setTableDataDonHang(List<DonHang> dsDonHang) throws SQLException, ClassNotFoundException {
-        model.setRowCount(0); 
-        
-        String[] columns = DonHang.getTableHeaders();
-        Object[][] data = new Object[dsDonHang.size()][columns.length];
 
-        for (int i = 0; i < dsDonHang.size(); i++) {
-            data[i] = dsDonHang.get(i).toTableRow();
-        }
-        setTableData(data);
-    }
-    
-    public void setTableDataGoiHang(List<GoiHang> dsGoiHang) throws SQLException, ClassNotFoundException{
-        model.setRowCount(0);
-        String[] columns = GoiHang.getTableHeaders();
-        Object[][] data = new Object[dsGoiHang.size()][columns.length];
-
-        for (int i = 0; i < dsGoiHang.size(); i++) {
-            data[i] = dsGoiHang.get(i).toTableRow();
-        }
-        setTableData(data);
-        
-    }
     
     public void setTableData(Object[][] newData) {
         model.setRowCount(0); 
@@ -129,7 +108,7 @@ public class TableDonHang extends JPanel {
                 {false, "003", "Sản phẩm C", "150.000"}
             };
 
-            TableDonHang tableList = new TableDonHang(columns, data);
+            MyTable tableList = new MyTable(columns, data);
 
             frame.add(tableList);
             frame.setVisible(true);

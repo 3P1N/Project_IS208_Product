@@ -1,4 +1,4 @@
-package appgiaovan;
+package appquanlykho.Components;
 
 import java.io.File;
 import javax.mail.*;

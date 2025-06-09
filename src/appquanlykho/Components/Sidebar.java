@@ -1,7 +1,8 @@
-package appgiaovan.GUI.Components;
+package appquanlykho.Components;
 
-import appgiaovan.DAO.TaiKhoanDAO;
-import appgiaovan.Entity.TaiKhoan;
+
+import appquanlykho.DAO.NguoiDungDAO;
+import appquanlykho.Entity.NguoiDung;
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
@@ -14,7 +15,7 @@ import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
-public class MenuBar extends JPanel {
+public class Sidebar extends JPanel {
 
     private JLabel activeLabel = null;
     private JLabel nameLabel;
@@ -22,10 +23,11 @@ public class MenuBar extends JPanel {
     private final Color DEFAULT_BG = new Color(4, 36, 74);
     private final Color HOVER_BG = new Color(30, 60, 100);
     private final List<JLabel> labels = new ArrayList<>();
+    private NguoiDung nguoiDung = null;
 
-    public MenuBar(List<String> itemNames, List<String> iconNames, int idtk) throws SQLException, ClassNotFoundException {
+    public Sidebar(List<String> itemNames, List<String> iconNames, NguoiDung nd) throws SQLException, ClassNotFoundException {
         setBackground(DEFAULT_BG);
-
+        nguoiDung = nd;
         setLayout(new BoxLayout(this, BoxLayout.Y_AXIS));
         setPreferredSize(new Dimension(180, 700));  
 
@@ -34,7 +36,7 @@ public class MenuBar extends JPanel {
         mainPanel.setBackground(DEFAULT_BG);
         mainPanel.add(createLogoSection());
         mainPanel.add(createSeparator());
-        mainPanel.add(setupProfileSection(idtk));
+        mainPanel.add(setupProfileSection());
         mainPanel.add(createSeparator());
 
         for (int i = 0; i < itemNames.size(); i++) {
@@ -131,7 +133,7 @@ public class MenuBar extends JPanel {
         animateBackground(activeLabel, activeLabel.getBackground(), targetColor);
     }
 
-    private JPanel setupProfileSection(int idtk) throws SQLException, ClassNotFoundException {
+    private JPanel setupProfileSection() throws SQLException, ClassNotFoundException {
         JPanel profilePanel = new JPanel();
         profilePanel.setLayout(new BoxLayout(profilePanel, BoxLayout.Y_AXIS));
         profilePanel.setBackground(DEFAULT_BG);
@@ -174,13 +176,11 @@ public class MenuBar extends JPanel {
         });
         
         
-        TaiKhoan tk = new TaiKhoanDAO().LayThongTinTaiKhoan(idtk);
-        System.out.println(tk.getTenNguoiDung());
-
-        nameLabel = new JLabel(tk.getTenNguoiDung());
+        
+        nameLabel = new JLabel(this.nguoiDung.getHoTen());
         nameLabel.setForeground(Color.WHITE);
-        System.out.println(tk.getTenTaiKhoan());
-        titleLabel = new JLabel(tk.getVaiTro());
+        
+        titleLabel = new JLabel(nguoiDung.getVaiTro());
         titleLabel.setForeground(Color.LIGHT_GRAY);
         titleLabel.setFont(new Font("Arial", Font.PLAIN, 11));
         nameLabel.setAlignmentX(Component.CENTER_ALIGNMENT);
@@ -256,13 +256,18 @@ public class MenuBar extends JPanel {
             List<String> items = Arrays.asList("Quản lý đơn hàng", "Báo cáo", "Hỗ trợ", "Đăng xuất");
             List<String> icons = Arrays.asList("order.png", "report.png", "support.png", "logout.png");
 
-            MenuBar menu = null;
+            Sidebar menu = null;
             try {
-                menu = new MenuBar(items, icons, 6);
+                NguoiDung nd = new NguoiDung();
+                nd.setIdNguoiDung(1);
+                nd = NguoiDungDAO.LayThongTinNguoiDung(nd);
+                menu = new Sidebar(items, icons, nd);
             } catch (SQLException ex) {
-                Logger.getLogger(MenuBar.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(Sidebar.class.getName()).log(Level.SEVERE, null, ex);
             } catch (ClassNotFoundException ex) {
-                Logger.getLogger(MenuBar.class.getName()).log(Level.SEVERE, null, ex);
+                Logger.getLogger(Sidebar.class.getName()).log(Level.SEVERE, null, ex);
+            } catch (Exception ex) {
+                Logger.getLogger(Sidebar.class.getName()).log(Level.SEVERE, null, ex);
             }
             frame.setLayout(new BorderLayout());
             frame.add(menu, BorderLayout.WEST);  // Menu sẽ được đặt ở bên trái

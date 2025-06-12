@@ -85,10 +85,10 @@ public class KiemTraTonKhoPanel extends JPanel {
 
         for (int i = 0; i < dscttk.size(); i++) {
             data[i] = dscttk.get(i).toTableRow();
+
         }
 
         table.setTableData(data);
-        
 
     }
 

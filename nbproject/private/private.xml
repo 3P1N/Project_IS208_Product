@@ -3,7 +3,11 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
+            <file>file:/E:/JAVA/Project_IS208_Product/src/appquanlykho/DAO/ChiTietNhapXuatDAO.java</file>
             <file>file:/E:/JAVA/Project_IS208_Product/src/appquanlykho/NhanVienGUI/NhanVienGUI.java</file>
+            <file>file:/E:/JAVA/Project_IS208_Product/src/appquanlykho/DAO/PhieuNhapXuatDAO.java</file>
+            <file>file:/E:/JAVA/Project_IS208_Product/src/appquanlykho/DAO/LoaiSanPhamDAO_1.java</file>
+            <file>file:/E:/JAVA/Project_IS208_Product/src/appquanlykho/Entity/PhieuNhapXuat.java</file>
         </group>
     </open-files>
 </project-private>

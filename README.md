@@ -2,7 +2,7 @@
 # Project_IS208_Quản lý dự án Công nghệ thông tin
 Đề tài: Quản lý kho
 
-Link repo: 
+Link repo: https://github.com/3P1N/Project_IS208_Product
 
 Hướng dẫn cài đặt chương trình phần mềm hệ thống quản lý đơn vị giao vận
 

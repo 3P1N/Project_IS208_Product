@@ -20,11 +20,11 @@ Mở ứng dụng netbeans -> File -> Open project -> Chọn project vừa tải
 Nhấp chuột phải vào Libraries -> Bấm Add JAR/ Folder
 -> Chọn các file jar trong thư mục lib -> Bấm Open.
 5. Chuẩn bị cơ sở dữ liệu:
-Mở SQL Plus -> Tạo user “DoAnGiaoVan” với mật khẩu “Admin123” và gán quyền:
+Mở SQL Plus -> Tạo user “QuanLyKho” với mật khẩu “Admin123” và gán quyền:
 
       alter session set "_ORACLE_SCRIPT"=true;
-      Create user DoAnGiaoVan IDENTIFIED BY Admin123;
-      GRANT DBA to DoAnGiaoVan;
+      Create user QuanLyKho IDENTIFIED BY Admin123;
+      GRANT DBA to QuanLyKho;
 
 Tải file sql tại link sau:
 Mở trình duyệt Oracle hoặc SQL Developer, dbForge Studio, …. Và khởi chạy file sql vừa tải.

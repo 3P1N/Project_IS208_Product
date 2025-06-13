@@ -23,9 +23,8 @@ public class ChiTietBaoCao {
 
     public Object[] toTableRow() throws  ClassNotFoundException, Exception {
         SanPham sp = new SanPham();
-        sp.setIdLoaiSanPham(idSanPham);
+        sp.setIdSanPham(idSanPham);
         sp = SanPhamDAO.LayThongTinSanPham(sp);
-        
         return new Object[]{"", idSanPham,
              sp.getTenSanPham(), soLuong};
     }

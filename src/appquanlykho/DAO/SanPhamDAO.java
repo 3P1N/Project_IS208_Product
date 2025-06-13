@@ -16,6 +16,7 @@ public class SanPhamDAO {
         List<Object> params = new ArrayList<>();
 
         if (sp.getIdSanPham() != null) {
+
             sql.append(" AND ID_SanPham = ?");
             params.add(sp.getIdSanPham());
         }
@@ -38,6 +39,7 @@ public class SanPhamDAO {
                 sanPham.setTenSanPham(rs.getString("TenSanPham"));
                 sanPham.setDonViTinh(rs.getString("DonViTinh"));
                 sanPham.setIdLoaiSanPham(rs.getObject("ID_LoaiSanPham") != null ? rs.getInt("ID_LoaiSanPham") : null);
+                
                 return sanPham;
             }
 

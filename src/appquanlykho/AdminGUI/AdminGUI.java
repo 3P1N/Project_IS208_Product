@@ -7,16 +7,7 @@ package appquanlykho.AdminGUI;
 import appquanlykho.DAO.NguoiDungDAO;
 import appquanlykho.Entity.NguoiDung;
 import appquanlykho.GUI.LOGIN;
-import com.formdev.flatlaf.FlatLightLaf;
-import javax.swing.*;
-import java.awt.BorderLayout;
-import java.awt.CardLayout;
-import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-import javax.swing.JFrame;
-import javax.swing.JPanel;
-import javax.swing.SwingUtilities;
+
 
 import com.formdev.flatlaf.FlatLightLaf;
 import java.awt.BorderLayout;
@@ -40,7 +31,7 @@ public class AdminGUI extends JFrame {
 
         this.nguoiDung = nguoiDung;
 
-        setTitle("3P1N - Nhân viên kho");
+        setTitle("3P1N - Admin");
         setSize(1400, 700);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);

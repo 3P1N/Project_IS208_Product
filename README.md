@@ -26,7 +26,7 @@ Mở SQL Plus -> Tạo user “QuanLyKho” với mật khẩu “Admin123” v�
       Create user QuanLyKho IDENTIFIED BY Admin123;
       GRANT DBA to QuanLyKho;
 
-Tải file sql tại link sau:
-Mở trình duyệt Oracle hoặc SQL Developer, dbForge Studio, …. Và khởi chạy file sql vừa tải.
+Mở file sql trong thư project:
+Mở trình duyệt Oracle hoặc SQL Developer, dbForge Studio, …. Và khởi chạy file sql.
 
 

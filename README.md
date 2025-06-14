@@ -22,11 +22,11 @@ Nhấp chuột phải vào Libraries -> Bấm Add JAR/ Folder
 5. Chuẩn bị cơ sở dữ liệu:
 Mở SQL Plus -> Tạo user “QuanLyKho” với mật khẩu “Admin123” và gán quyền:
 
-      alter session set "_ORACLE_SCRIPT"=true;
-      Create user QuanLyKho IDENTIFIED BY Admin123;
-      GRANT DBA to QuanLyKho;
+   alter session set "_ORACLE_SCRIPT"=true;
+   Create user QuanLyKho IDENTIFIED BY Admin123;
+   GRANT DBA to QuanLyKho;
 
 Mở file sql trong thư project: https://github.com/3P1N/Project_IS208_Product/blob/main/SQL.sql
-Mở trình duyệt Oracle hoặc SQL Developer, dbForge Studio, …. Và khởi chạy file sql.
+Mở ứng dụng Oracle hoặc SQL Developer, dbForge Studio, …. Và khởi chạy file sql.
 
 

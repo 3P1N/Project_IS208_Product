@@ -1,6 +1,6 @@
 ![image](https://github.com/user-attachments/assets/0384fcab-d8cb-4d83-a8d5-6669ba975bfa)
 # Project_IS208_Quản lý dự án Công nghệ thông tin
-Đề tài: Quản lý kho
+Đề tài: Xây dựng ứng dụng Desktop Quản lý kho hàng
 
 Link repo: https://github.com/3P1N/Project_IS208_Product
 
@@ -26,7 +26,7 @@ Mở SQL Plus -> Tạo user “QuanLyKho” với mật khẩu “Admin123” v�
       Create user QuanLyKho IDENTIFIED BY Admin123;
       GRANT DBA to QuanLyKho;
 
-Mở file sql trong thư project:
+Mở file sql trong thư project: https://github.com/3P1N/Project_IS208_Product/blob/main/SQL.sql
 Mở trình duyệt Oracle hoặc SQL Developer, dbForge Studio, …. Và khởi chạy file sql.
 
 
